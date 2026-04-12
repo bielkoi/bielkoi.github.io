@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOITOTO | Legendary Household Gear</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Crimson+Text:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-green: #004832;
+            --brand-success: #00AA5B;
+            --yugi-gold: #C5A15A;
+            --yugi-brown: #D1894C;
+        }
+
+        body { font-family: 'Open Sans', sans-serif; background-color: #f4f4f4; overflow-x: hidden; }
+
+        /* --- HEADER SECTION --- */
+        .announcement-bar { background-color: var(--brand-green); font-size: 13px; }
+        .main-nav .input-group { background-color: #f0f2f5; border-radius: 50px; }
+        
+        /* Mega Menu */
+        .has-megamenu { position: static !important; }
+        .megamenu-content {
+            position: absolute; top: 100%; left: 0; width: 100%; background: #fff;
+            visibility: hidden; opacity: 0; transition: all 0.2s ease-in-out;
+            z-index: 9999; transform: translateY(10px); border-top: 1px solid #eee;
+        }
+        .has-megamenu:hover .megamenu-content { visibility: visible; opacity: 1; transform: translateY(0); }
+        .megamenu-list li a { color: #666; text-decoration: none; font-size: 13px; transition: 0.2s; }
+        .megamenu-list li a:hover { color: var(--brand-success); padding-left: 5px; }
+
+        /* --- YU-GI-OH CARD STYLE --- */
+        .yugi-perspective { perspective: 1000px; padding: 20px; }
+        .yugi-card {
+            background: var(--yugi-brown);
+            border: 8px solid var(--yugi-gold);
+            border-radius: 10px;
+            padding: 12px;
+            width: 100%;
+            max-width: 350px;
+            margin: auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transform-origin: center center;
+    will-change: transform; /* Performance optimization */
+        }
+        .card-name-plate {
+            background: linear-gradient(to bottom, #f0f0f0, #ccc);
+            border: 2px solid #555;
+            padding: 2px 10px;
+            box-shadow: 1px 1px 0px #fff inset;
+        }
+        .card-name-plate h4 { font-family: 'Crimson Text', serif; font-weight: 800; font-size: 1.2rem; color: #111; margin: 0; }
+        
+        .attr-icon { background: #800000; color: #fff; font-size: 10px; padding: 4px; border-radius: 50%; border: 1px solid #fff; }
+        .star-row { color: #ffcc00; font-size: 12px; text-shadow: 0 0 3px #000; padding: 4px 10px; }
+        
+        .card-art-frame { 
+            width: 100%; height: 250px; background: #000; overflow: hidden; 
+            position: relative; border: 4px solid #666; 
+        }
+        .card-art { width: 100%; height: 100%; object-fit: cover; }
+        .holographic-sheen {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            pointer-events: none; z-index: 2;
+            background: linear-gradient(
+        135deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.4) 45%, 
+        rgba(255,255,255,0.7) 50%, 
+        rgba(255,255,255,0.4) 55%, 
+        rgba(255,255,255,0) 100%
+    );
+    background-size: 200% 200%;
+    mix-blend-mode: overlay; /* Makes the shine interact with the card art colors */
+    opacity: 0.3;
+        }
+
+        .card-desc-box { 
+            background: #FDF5E6; border: 2px solid #000; padding: 8px; 
+            font-family: 'Crimson Text', serif; color: #000;
+        }
+        .card-type { font-weight: bold; font-size: 14px; border-bottom: 1px solid #000; margin-bottom: 4px; }
+        .card-effect { font-size: 12px; line-height: 1.3; font-style: italic; }
+
+        /* --- FOOTER --- */
+        .trust-bar { background-color: #000; color: #fff; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white border-bottom sticky-top">
+        <div class="announcement-bar py-2 text-white text-center">
+            <div class="container-fluid">Up to 50% Off Styles. <a href="#" class="text-white fw-bold">Shop Now</a></div>
+        </div>
+
+        <div class="main-nav py-3">
+            <div class="container-fluid px-lg-5 d-flex align-items-center">
+                <a href="#"><img src="https://imgstore.io/images/2025/03/07/KOITOTO.png" height="40" alt="Logo"></a>
+                <div class="flex-grow-1 mx-4">
+                    <div class="input-group px-3"><span class="input-group-text bg-transparent border-0"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-0 bg-transparent shadow-none" placeholder="Search pasaran...">
+                    </div>
+                </div>
+                <div class="d-flex gap-3">
+                    <i class="bi bi-person fs-4"></i>
+                    <i class="bi bi-cart3 fs-4"></i>
+                </div>
+            </div>
+        </div>
+
+        <nav class="category-nav d-none d-lg-block border-top">
+            <div class="container-fluid px-lg-5">
+                <ul class="nav justify-content-between small fw-bold">
+                    <li class="nav-item has-megamenu">
+                        <a class="nav-link text-dark py-3" href="#">New & Trending <i class="bi bi-chevron-down"></i></a>
+                        <div class="megamenu-content shadow-lg">
+                            <div class="container-fluid py-4 px-lg-5">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <h6 class="text-success fw-bold">PASARAN TERPOPULER</h6>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li><a href="#">Hongkong Pools</a></li>
+                                            <li><a href="#">Singapore 4D</a></li>
+                                            <li><a href="#">Sydney Lotto</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-4">
+                                        <h6 class="fw-bold">PASARAN ASIA</h6>
+                                        <ul class="list-unstyled megamenu-list">
+                                            <li><a href="#">Toto Macau</a></li>
+                                            <li><a href="#">Japan Pools</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-dark py-3" href="#">Sports</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark py-3" href="#">Accessories</a></li>
+                    <li class="nav-item"><a class="nav-link text-danger py-3" href="#">Sale</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <div class="row g-5 align-items-center">
+            
+            <div class="col-lg-5 yugi-perspective">
+                <div class="yugi-card" id="yugiCard">
+                    <div class="card-name-plate d-flex justify-content-between align-items-center">
+                        <h4>RAK YOYO PREMIUM</h4>
+                        <div class="attr-icon fw-bold">EARTH</div>
+                    </div>
+                    <div class="star-row">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="card-art-frame">
+                        <div class="holographic-sheen"></div>
+                        <img src="https://imgmahasuhu.io/images/2026/04/08/4d--online-2.jpeg" class="card-art" alt="Art">
+                    </div>
+                    <div class="card-desc-box mt-2">
+                        <div class="card-type">[ Household / Effect ]</div>
+                        <div class="card-effect">
+                            Sangat kokoh dan tidak dapat dihancurkan oleh rayap. Jika dirakit di area "Dapur": Tambah status Kerapihan +1000. Dilengkapi roda 360 derajat.
+                        </div>
+                        <div class="text-end fw-bold mt-1" style="font-size: 12px;">ATK / 2500  DEF / 2000</div>
+                    </div>
+                    <div class="text-start" style="font-size: 8px; margin-top: 5px;">08042026-KOITOTO</div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <h6 class="text-success fw-bold">LEGENDARY ITEM</h6>
+                <h1 class="fw-bold display-5">Rak Multiguna Serbaguna Yoyo</h1>
+                <p class="lead text-secondary">Organisir ruangan Anda dengan kekuatan kartu level bintang 5. Material Polypropylene Grade A.</p>
+                <h3 class="text-danger fw-bold mb-4">Rp 150.000</h3>
+                <div class="d-flex gap-3">
+                    <button class="btn btn-success btn-lg px-5 fw-bold rounded-pill shadow">Beli Sekarang</button>
+                    <button class="btn btn-outline-dark btn-lg px-4 rounded-pill">Detail Kartu</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="mt-5">
+        <div class="trust-bar py-3 text-center">
+            <div class="container d-flex justify-content-around fw-bold">
+                <span><i class="bi bi-arrow-repeat me-2"></i> 30-Day Returns</span>
+                <span><i class="bi bi-truck me-2"></i> Free Shipping</span>
+                <span><i class="bi bi-shield-check me-2"></i> 2-Year Warranty</span>
+            </div>
+        </div>
+        <div class="bg-white py-5 border-top">
+            <div class="container text-center">
+                <img src="https://imgstore.io/images/2025/03/07/KOITOTO.png" height="30" class="mb-3 grayscale" style="filter: grayscale(1);">
+                <p class="small text-secondary">© 2026 KOITOTO Limited Edition. Duel with Order.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+$(document).ready(function() {
+    const card = $('#yugiCard');
+    const sheen = $('.holographic-sheen');
+    const container = $('.yugi-perspective');
+
+    container.on('mousemove', function(e) {
+        // Get dimensions of the container
+        const w = container.width();
+        const h = container.height();
+        
+        // Calculate cursor position relative to the center of the card
+        const offsetX = e.pageX - container.offset().left;
+        const offsetY = e.pageY - container.offset().top;
+        
+        // Calculate rotation (Max 25 degrees)
+        const rotationY = ((offsetX / w) - 0.5) * 50; 
+        const rotationX = ((offsetY / h) - 0.5) * -50;
+        
+        // Apply transformation
+        card.css({
+            "transform": `rotateY(${rotationY}deg) rotateX(${rotationX}deg) scale(1.05)`,
+            "transition": "transform 0.1s ease-out" // Snappy while moving
+        });
+
+        // Move holographic sheen
+        const posX = (offsetX / w) * 100;
+        const posY = (offsetY / h) * 100;
+        sheen.css({
+            "background-position": `${posX}% ${posY}%`,
+            "opacity": "1"
+        });
+    });
+
+    // Reset position when cursor leaves the div
+    container.on('mouseleave', function() {
+        card.css({
+            "transform": "rotateY(0deg) rotateX(0deg) scale(1)",
+            "transition": "transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)" // Smooth snap back
+        });
+        sheen.css({
+            "opacity": "0.3",
+            "transition": "opacity 0.6s ease"
+        });
+    });
+});
+    </script>
+</body>
+</html>
