@@ -1,2 +1,0 @@
-# bielkoi.github.io
-bio
